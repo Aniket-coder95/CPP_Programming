@@ -7,11 +7,11 @@ bool isPalindrome(string s) {
     int start = 0 , end = s.size()-1;
     while(start <= end){
         char x = s[start],y=s[end];
-        if(!isalpha(x)){
+        if(!isalnum(x)){
             start++;
             continue;
         }
-        if(!isalpha(y)){
+        if(!isalnum(y)){
             end--;
             continue;
         }
