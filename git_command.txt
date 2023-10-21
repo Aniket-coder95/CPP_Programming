@@ -1,0 +1,8 @@
+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
+
+
+
+git remote set-url origin https://<token>@github.com/<username>/<repo>
+
+
+git remote set-url origin https://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@github.com/Aniket-coder95/C-Plus-Programming
