@@ -1,0 +1,12 @@
+./test.cpp
+./reverse_array.cpp
+./fun_overloading.cpp
+./191.No_of_1_Bits/1bits.cpp
+./anagram.cpp
+./parentheses_checker.cpp
+./strstr.cpp
+./revere_string.cpp
+./longest_substr.cpp
+./str_permutation.cpp
+./16.3Sum_Closest/3sum_closest.cpp
+./125.valid_palindrome/valid_palindrom.cpp
