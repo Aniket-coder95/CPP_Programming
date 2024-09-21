@@ -1,8 +1,0 @@
-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
-
-
-
-git remote set-url origin https://<token>@github.com/<username>/<repo>
-
-
-git remote set-url origin https://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@github.com/Aniket-coder95/C-Plus-Programming
