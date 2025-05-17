@@ -1,2 +1,1 @@
-g++ main.cpp  oops.cpp -o oops
-./oops
+To run all the code present in "OOPS" dir run the "run.sh" 
