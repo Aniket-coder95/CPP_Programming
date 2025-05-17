@@ -1,5 +1,6 @@
 #include "oops.h"
 #include "day_one.hpp"
+#include "day_two.hpp"
 
 int main(){
 #if shallow_copy_
@@ -26,6 +27,15 @@ std::cout<<"Deep Copy"<<std::endl;
     d1.updatevector();
     d1.print_vector();
     dayone::day_one::static_mem_fun();
+    std::cout<<std::endl;
+#endif
+
+#if day_two_var
+    std::cout<<"DAY_TWO"<<std::endl;
+    day_two::base_one b1(1,2);
+    day_two::base_two b2(3,4);
+    day_two::child c(5,6,7,8);
+    c.get_value();
 #endif
 
     return 0;

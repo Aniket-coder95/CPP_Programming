@@ -18,4 +18,6 @@ namespace dayone{
       };
 };
 
+using namespace dayone;
+
 #endif
