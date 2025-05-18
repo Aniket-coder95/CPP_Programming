@@ -1,1 +1,0 @@
-To run all the code present in "OOPS" dir run the "run.sh" 
