@@ -1,0 +1,74 @@
+✅ Step-by-Step: Switch to SSH for GitHub
+🔹 1. Check for Existing SSH Key
+bash
+Copy
+Edit
+ls ~/.ssh/id_rsa.pub
+If it exists, skip to Step 4.
+
+If no key, continue to Step 2.
+
+🔹 2. Generate SSH Key (if needed)
+bash
+Copy
+Edit
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+Press Enter to accept the default file location (~/.ssh/id_rsa)
+
+Leave passphrase empty or set one if you want extra security
+
+🔹 3. Start SSH Agent and Add Your Key
+bash
+Copy
+Edit
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_rsa
+🔹 4. Add SSH Key to GitHub
+Copy your public key:
+
+bash
+Copy
+Edit
+cat ~/.ssh/id_rsa.pub
+Go to: https://github.com/settings/keys
+
+Click "New SSH Key"
+
+Paste the key, give it a title (e.g. "VBox Ubuntu"), and save.
+
+🔹 5. Test Your SSH Connection
+bash
+Copy
+Edit
+ssh -T git@github.com
+Expected output:
+
+vbnet
+Copy
+Edit
+Hi Aniket-coder95! You've successfully authenticated, but GitHub does not provide shell access.
+If you get this, you're done ✅
+
+🔹 6. Switch Existing Remote to SSH (optional)
+If you cloned using HTTPS and want to switch to SSH:
+
+bash
+Copy
+Edit
+cd your_repo/
+git remote set-url origin git@github.com:Aniket-coder95/CPP_Programming.git
+Verify:
+
+bash
+Copy
+Edit
+git remote -v
+You should now see:
+
+scss
+Copy
+Edit
+origin  git@github.com:Aniket-coder95/CPP_Programming.git (fetch)
+origin  git@github.com:Aniket-coder95/CPP_Programming.git (push)
+Let me know if you want to automate this setup for all new repositories or use a custom SSH key (like id_ed25519).
+
