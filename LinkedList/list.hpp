@@ -5,8 +5,10 @@ class node{
 public:
     int data;
     node* next;
-    node* createList();
-    void printList(node*);
+    
+    node* createList(); //creates a linkedlist
+    node* reverseList(node*); //reverse the linkedlist
+    void printList(node*); //print the linkedlist
 };
 
 #endif

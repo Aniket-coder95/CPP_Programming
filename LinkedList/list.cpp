@@ -2,7 +2,7 @@
 
 node* node::createList(){
     int n;
-    std::cout << "enter no of nodes : " << std::endl;
+    std::cout << "enter no of nodes : ";
     std::cin >> n;
 
     node* head = new node;
@@ -16,6 +16,19 @@ node* node::createList(){
         h=curr;
     }
     return head->next;
+}
+
+node* node::reverseList(node* head){
+    node* curr = head;
+    node* prev = nullptr;
+    node* next;
+    while(curr){
+        next = curr->next;
+        curr->next = prev;
+        prev = curr;
+        curr = next;
+    }
+    return prev;
 }
 
 void node::printList(node* head){
