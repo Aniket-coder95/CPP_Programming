@@ -27,31 +27,42 @@ node* node::createList(){
     return head;
 }
 
-// int node::getsize(node* head){
-//     int count = 0;
-//     while(head != nullptr){
-//         std::cout<<head->data<<" ";
-//         count++;
-//         head = head->next;
-//     }
-//     return count;
-// }
-node* node::merge(node* left, node* right){
-    node head;
-    node* tail = &head;
-
-    while(left && right){
-        if(left->data > right->data){
-            tail->next = right;
-            right=right->next;
-        }else if(left->data <= right->data){
-            tail->next = left;
-            left = left->next;
-        }
-        tail = tail->next;
+int node::getsize(node* head){
+    int count = 0;
+    while(head != nullptr){
+        count++;
+        head = head->next;
     }
-    tail->next = left ? left : right;
-    return head.next;
+    return count;
+}
+
+node* node::merge(node* left, node* right){
+    if(!left) return right;
+    if(!right) return left;
+
+    if(left->data < right->data){
+         left->next = merge(left->next, right);
+         return left;
+    }else {
+        right->next =  merge(left,right->next);
+        return right;
+    }
+    //*****take more time but works perfectly*****
+    // node head;
+    // node* tail = &head;
+
+    // while(left && right){
+    //     if(left->data > right->data){
+    //         tail->next = right;
+    //         right=right->next;
+    //     }else if(left->data <= right->data){
+    //         tail->next = left;
+    //         left = left->next;
+    //     }
+    //     tail = tail->next;
+    // }
+    // tail->next = left ? left : right;
+    // return head.next;
 }
 
 node* node::sortList(node* head){

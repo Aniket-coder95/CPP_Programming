@@ -12,7 +12,7 @@ public:
     void printList(node*); //print the linkedlist
     node* sortList(node*);
     node* merge(node*, node*);
-    // int getsize(node*);
+    int getsize(node*);
 };
 
 #endif
