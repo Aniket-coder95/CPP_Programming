@@ -107,3 +107,31 @@ void node::printList(node* head){
     }
     std::cout<<"Null"<<std::endl;
 }
+
+//Merge k sorted LinkedList
+node* node::merge_k_sorted_lists(std::vector<node*>& lists){
+    std::cout << "Merged k sorted lists" << std::endl;
+    std::priority_queue<node, std::vector<node*>, compare> minheap;
+    for(node* x : lists){
+        if(x) minheap.push(x);
+    }
+
+    node* head = nullptr;
+    node* tail = nullptr;
+
+    while(!minheap.empty()){
+        node* curr_node = minheap.top();
+        minheap.pop();
+
+        if(!head){
+            head = tail = curr_node;
+        }else{
+            tail->next = curr_node;
+            tail = tail->next;
+        }
+
+        if(curr_node->next) minheap.push(curr_node->next);
+    }
+
+    return head;
+}

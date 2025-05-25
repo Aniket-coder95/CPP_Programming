@@ -28,9 +28,25 @@ int main(){
     n.printList(rhead);
 
 
-    // node* head2 = n.createList();
-    // std::cout<<"The 2nd List is :" <<std::endl;
-    // n.printList(head2);
+    std::cout<<"lets create k sorted list"<<std::endl;
+    node* head4 = n.createList();
+    node* head5 = n.createList();
+    node* head6 = n.createList();
+    node* head7 = n.createList();
+
+    node* sorted_head1 = n.sortList(head4);
+    node* sorted_head2 = n.sortList(head5);
+    node* sorted_head3 = n.sortList(head6);
+    node* sorted_head4 = n.sortList(head7);
+
+    std::vector<node*> lists;
+    lists.push_back(sorted_head1);
+    lists.push_back(sorted_head2);
+    lists.push_back(sorted_head3);
+    lists.push_back(sorted_head4);
+
+    node* mksl = n.merge_k_sorted_lists(lists);
+    n.printList(mksl);
 
     return 0;
 }
