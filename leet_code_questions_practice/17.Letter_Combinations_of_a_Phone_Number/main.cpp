@@ -12,19 +12,12 @@ vector<string> letterCombinations(string digits) {
     result.push_back("");
     
     for(auto digit: digits) {
-        // cout << digit << endl;
         vector<string> tmp;
-        for(auto candidate: pad[digit - '0']) {
-            // cout << candidate;
-            for(auto s: result) {
-                // cout << s + candidate << "->";
-                tmp.push_back(s + candidate);
+        for(auto digit: pad[digit - '0']) {
+            for(auto ch: result) {
+                tmp.push_back(ch + digit);
             }
         }
-        // for(auto x: tmp){
-        //     cout << x << " ";
-        // }
-        // cout << endl;
         result.swap(tmp);
     }
     return result;
@@ -38,5 +31,6 @@ int main(){
 	for(auto num : result){
 		cout << num << " ";
 	}
+    std::cout << std::endl;
 	return 0;
 }
